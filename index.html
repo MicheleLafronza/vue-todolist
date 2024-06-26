@@ -26,7 +26,10 @@
 
         <div class="list-container">
             <ul>
-                <li v-for="task in toDoList" :class="task.done === true ? 'done' : ''">{{task.text}}</li>
+                <li v-for="(task,index) in toDoList" :key="index" :class="task.done === true ? 'done' : ''">
+                    {{task.text}}
+                    <span class="cancel-task" @click="removeTask(index)">&#10005;</span>
+                </li>
             </ul>
             <!-- h3 con non c'è task  -->
         </div>

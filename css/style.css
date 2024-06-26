@@ -40,6 +40,7 @@ li {
     padding: 5px;
     background-color: gainsboro;
     border: 1px solid grey;
+    position: relative;
 }
 
 button {
@@ -49,4 +50,11 @@ button {
 
 .done {
     text-decoration: line-through;
+}
+
+.cancel-task {
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    cursor: pointer;
 }
