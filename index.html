@@ -19,19 +19,19 @@
         <h1 class="mb-20 mt-20 text-center">To Do List</h1>
 
         <div class="cont-form text-center">
-            <input type="text" class="mb-20 m-0-auto" v-model="newTask.text">
+            <input type="text" class="mb-20 m-0-auto" v-model="newTask.text" @keyup.enter="addTask">
             <button @click="addTask">Aggiungi</button>
-            <!-- h3 con errore -->
+            <h5 style="color:red" v-show="inputError">*richiede un minimo di 5 caratteri</h5>
         </div>
 
         <div class="list-container">
-            <ul>
-                <li v-for="(task,index) in toDoList" :key="index" :class="task.done === true ? 'done' : ''">
+            <ul v-if="toDoList.length >= 1">
+                <li @click="task.done = !task.done" v-for="(task,index) in toDoList" :key="index" :class="task.done === true ? 'done' : ''">
                     {{task.text}}
                     <span class="cancel-task" @click="removeTask(index)">&#10005;</span>
                 </li>
             </ul>
-            <!-- h3 con non c'è task  -->
+            <h5 v-else>La Lista è vuota, inserisci un'attività!</h5>
         </div>
     
     </div>

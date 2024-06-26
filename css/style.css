@@ -41,6 +41,7 @@ li {
     background-color: gainsboro;
     border: 1px solid grey;
     position: relative;
+    cursor: pointer;
 }
 
 button {
