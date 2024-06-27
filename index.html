@@ -19,7 +19,7 @@
         <h1 class="mb-20 mt-20 text-center">To Do List</h1>
 
         <div class="cont-form text-center">
-            <input type="text" class="mb-20 m-0-auto" v-model="newTask.text" @keyup.enter="addTask">
+            <input type="text" class="mb-20 m-0-auto" v-model="text" @keyup.enter="addTask">
             <button @click="addTask">Aggiungi</button>
             <h5 style="color:red" v-show="inputError">*richiede un minimo di 5 caratteri</h5>
         </div>

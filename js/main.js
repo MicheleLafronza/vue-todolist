@@ -18,10 +18,9 @@ const { createApp } = Vue
                 done: false,
             },
         ],
-        newTask: {
-            text: "",
-            done: false,
-        },
+         
+        text: "",
+        
         inputError : false,
       }
     },
@@ -32,10 +31,11 @@ const { createApp } = Vue
         },
         // funzione per aggiungere una task all'inizio dell'array e svuotare il campo dell'input
         addTask() {
-            if (this.newTask.text.length >= 5) {
-                this.toDoList.unshift({ text: this.newTask.text, done: false });
-                this.newTask.text = "";
+            if (this.text.length >= 5) {
+                this.toDoList.unshift({ text: this.text, done: false });
+                this.text = "";
                 this.inputError = false;
+                console.log(this.toDoList);
             } else {
                 this.inputError = true;
             }
